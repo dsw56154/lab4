@@ -1,5 +1,20 @@
 #!/bin/bash
+
 SCRIPT_NAME=$(basename "$0")
+
+show_help() {
+  echo "Uzycie: $SCRIPT_NAME [opcja] [argument]"
+  echo
+  echo "Dostepne opcje:"
+  echo "  --date               Wyswietla date."
+  echo "  --logs [N]           Tworzy N plikw log.txt domyslnie 100."
+  echo "  --help               Wyswietla pomoc."
+}
+
+if [ "$1" == "--help" ]; then
+  show_help
+  exit 0
+
 if [ "$1" == "--date" ]; then
   date
 elif [ "$1" == "--logs" ]; then
