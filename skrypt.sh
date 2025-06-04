@@ -10,6 +10,12 @@ show_help() {
   echo "  --logs [N]           Tworzy N plikw log.txt domyslnie 100."
   echo "  --help               Wyswietla pomoc."
 }
+init_repo() {
+  git clone https://github.com/dsw56154/lab4 || {
+    echo "Clone failed"
+    exit 1
+  }
+}
 
 if [ "$1" == "--help" ]; then
   show_help
