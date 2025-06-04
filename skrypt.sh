@@ -6,18 +6,18 @@ show_help() {
   echo "Uzycie: $SCRIPT_NAME [opcja] [argument]"
   echo
   echo "Dostepne opcje:"
-  echo "  --date               Wyswietla date."
-  echo "  --logs [N]           Tworzy N plikw log.txt domyslnie 100."
-  echo "  --help               Wyswietla pomoc."
+  echo "  --date, -d               Wyswietla date."
+  echo "  --logs, -l [N]           Tworzy N plikw log.txt domyslnie 100."
+  echo "  --help, -h               Wyswietla pomoc."
 }
 
-if [ "$1" == "--help" ]; then
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
   show_help
   exit 0
 
-if [ "$1" == "--date" ]; then
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
   date
-elif [ "$1" == "--logs" ]; then
+elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
   num=100
   if [ -n "$2" ] && [ "$2" -eq "$2" ] 2>/dev/null; then
     num=$2
